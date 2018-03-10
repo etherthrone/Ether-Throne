@@ -10,6 +10,7 @@
     "npm": "^5.7.1",
     "parsleyjs": "^2.8.1",
     "react": "^16.2.0",
+    "react-app-env": "^1.2.0",
     "react-dom": "^16.2.0",
     "react-form": "^3.3.0",
     "react-redux": "^5.0.7",
@@ -24,8 +25,8 @@
     "web3": "^1.0.0-beta.30"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-env --env-file=../config/security.env.local start",
+    "build": "react-app-env --env-file=../config/security.env.build build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

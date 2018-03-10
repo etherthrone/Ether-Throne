@@ -1,0 +1,50 @@
+.etherbot_container {
+    width: 400px;
+    height: 500px;
+    background: white;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+}
+/* 1972 * 2204 */
+.etherbot_item_sprike {
+    background-image: url("/assets/ether_bots.png");
+    background-repeat: no-repeat;
+    background-position: 0.2% 0%; /*background-position: ((-$posX / ($total_width - $width)) * -100%) ((-$posY / ($total_height - $height)) * -100%);*/
+    background-size: 394.4% 424.7%; /* background-size: (($total_width / $width) * 100%) (($total_height / $height) * 100%);*/
+    width: 220px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+}
+
+.etherbot_item_vampire {
+    background-image: url('/assets/ether_bots.png');
+    background-repeat: no-repeat;
+    background-position: 35.6% 0%; /*background-position: ((-$posX / ($total_width - $width)) * -100%) ((-$posY / ($total_height - $height)) * -100%);*/
+    background-size: 394.4% 369.2%; /* background-size: (($total_width / $width) * 100%) (($total_height / $height) * 100%);*/
+    width: 220px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+}
+
+.etherbot_name {
+    font-size: 25px;
+    font-weight: 500;
+    color: #333333;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.etherbot_cost {
+    font-size: 20px;
+    font-weight: 500;
+    color: #e25419;
+    margin-top: 5px;
+}
+
+.etherbot_cost span {
+    font-size: 15px;
+}

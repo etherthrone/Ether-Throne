@@ -9,6 +9,9 @@ class Root extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            metamask: null
+        };
         this.initWeb3 = this.initWeb3.bind(this);
     }
 
@@ -19,30 +22,31 @@ class Root extends Component {
     initWeb3() {
         let _this = this;
         setTimeout(function(){
-            if (typeof window.web3 === 'undefined') {
-                console.log("Install MetaMask");
-                localStorage.setItem('metamask', 'null');
-            } else if (window.web3.eth.defaultAccount === undefined) {
-                console.log("Please unlock metamask.");
-                localStorage.setItem('metamask', 'lock');
-            } else {
-                console.log(window.web3.currentProvider.isMetaMask);
-                console.log(window.web3.eth.defaultAccount);
-                if (window.web3.currentProvider.isMetaMask) {
-                    localStorage.setItem('metamask', window.web3.eth.defaultAccount);
-                    _this.props.getAccountInfo({
-                        wallet: window.web3.eth.defaultAccount,
-                        cb: () => {
-                            console.log(_this.props.accountData);
-                            if (_this.props.error === null) {
-
-                                if (_this.props.accountData !== 'No user found.')
-                                    localStorage.setItem('user', _this.props.accountData);
+            //if (!localStorage.getItem('metamask')) {
+                if (typeof window.web3 === 'undefined') {
+                    console.log("Install MetaMask");
+                    localStorage.setItem('metamask', 'null');
+                } else if (window.web3.eth.defaultAccount === undefined) {
+                    console.log("Please unlock metamask.");
+                    localStorage.setItem('metamask', 'lock');
+                } else {
+                    console.log(window.web3.currentProvider.isMetaMask);
+                    console.log(window.web3.eth.defaultAccount);
+                    if (window.web3.currentProvider.isMetaMask) {
+                        localStorage.setItem('metamask', window.web3.eth.defaultAccount);
+                        _this.props.getAccountInfo({
+                            wallet: window.web3.eth.defaultAccount,
+                            cb: () => {
+                                console.log(_this.props.accountData);
+                                if (_this.props.error === null) {
+                                    if (_this.props.accountData !== 'No user found.')
+                                        localStorage.setItem('user', _this.props.accountData);
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
                 }
-            }
+            //}
         }, 1000);
     }
 

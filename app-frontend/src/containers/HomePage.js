@@ -9,28 +9,31 @@ class HomePage extends Component {
     }
 
     componentWillMount() {
-        if (localStorage.getItem('metamask')) {
-            if (localStorage.getItem('metamask') === 'null')
-                this.setState({
+        let _this = this;
+        setTimeout(function() {
+            if (localStorage.getItem('metamask')) {
+                if (localStorage.getItem('metamask') === 'null')
+                    _this.setState({
+                        metamask: -1
+                    });
+                else if (localStorage.getItem('metamask') === 'lock')
+                    _this.setState({
+                        metamask: 0
+                    });
+                else
+                    _this.setState({
+                        metamask: 1
+                    });
+            } else
+                _this.setState({
                     metamask: -1
                 });
-            else if (localStorage.getItem('metamask') === 'lock')
-                this.setState({
-                    metamask: 0
-                });
-            else
-                this.setState({
-                    metamask: 1
-                });
-        } else
-            this.setState({
-                metamask: -1
-            });
+        }, 1000);
     }
 
     render() {
         return (
-            <div className="col-md-12 text-center">
+            <div className="container text-center">
                 <h2>Welcome to EtherThrone!</h2>
                 {
                     (this.state.metamask === -1) ?
@@ -44,11 +47,11 @@ class HomePage extends Component {
                         </div>
                         :
                         <div>
-                            <button className="btn btn-primary">PLAY ON TESTNET</button>
-                            <button className="btn btn-primary">GET TESTNET ROBOTS</button>
-                            <button className="btn btn-primary">MY TESTNET ROBOTS</button>
-                            <a href="/pre-sale" className="btn btn-primary">PRESALE</a>
-                            <button className="btn btn-primary">MY REAL ROBOTS</button>
+                            <a href="#" className="button green"><div className="light"></div>PLAY ON TESTNET</a>
+                            <a href="#" className="button green"><div className="light"></div>GET TESTNET ROBOTS</a>
+                            <a href="#" className="button green"><div className="light"></div>MY TESTNET ROBOTS</a>
+                            <a href="/pre-sale" className="button green"><div className="light"></div>PRESALE</a>
+                            <a href="#" className="button green"><div className="light"></div>MY REAL ROBOTS</a>
                         </div>
                 }
             </div>

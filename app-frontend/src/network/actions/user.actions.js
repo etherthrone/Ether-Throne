@@ -16,7 +16,7 @@ let userActions = {
     getAccountInfo: function(wallet, cb){
         let _obj = this;
         return dispatch => {
-            fetch('http://localhost:3000/users/detail?wallet=' + wallet, {
+            fetch(process.env.REACT_APP_BACKEND_ENDPOINT_URL + 'users/detail?wallet=' + wallet, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ let userActions = {
         let _obj = this;
         return dispatch => {
             let _apiBody = "email="+data.email+"&wallet="+data.wallet+"&name="+data.nickname;
-            fetch('http://localhost:3000/users/', {
+            fetch(process.env.REACT_APP_BACKEND_ENDPOINT_URL + 'users/', {
                 method: 'POST',
                 body: _apiBody,
                 headers: {
