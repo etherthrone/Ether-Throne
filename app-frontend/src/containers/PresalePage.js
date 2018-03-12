@@ -17,15 +17,15 @@ class PresalePage extends Component {
                     <div className="col-md-6">
                         <EtherBot
                             name="sprike"
-                            cost="0.5"
-                            owner="0x55e2780588aa5000F464f700D2676fD0a22Ee160"
+                            cost="0.001"
+                            owner="0x71d46c1D4Eea94E3f74C38FA0aFd84b162Ce82F3"
                         />
                     </div>
                     <div className="col-md-6">
                         <EtherBot
                             name="vampire"
-                            cost="0.5"
-                            owner="0x55e2780588aa5000F464f700D2676fD0a22Ee160"
+                            cost="0.001"
+                            owner="0x71d46c1D4Eea94E3f74C38FA0aFd84b162Ce82F3"
                         />
                     </div>
                 </div>

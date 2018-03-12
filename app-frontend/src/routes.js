@@ -5,14 +5,16 @@ import PresalePage from './containers/PresalePage';
 import SigninPage from './containers/SigninPage';
 
 let requireAuth = (nextState, replace) => {
-  if (!localStorage.getItem('user')) {
-      replace({
-          pathname: '/sign-in',
-          state: {
-              nextPathname: nextState.location.pathname
-          }
-      });
-  }
+    setTimeout(function() {
+        if (!localStorage.getItem('user')) {
+            replace({
+                pathname: '/sign-in',
+                state: {
+                    nextPathname: nextState.location.pathname
+                }
+            });
+        }
+    }, 1000);
 };
 
 export default (

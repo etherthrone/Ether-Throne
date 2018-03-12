@@ -16,7 +16,9 @@ class SigninPage extends Component {
     }
 
     componentWillMount() {
+        if (localStorage.getItem('user')) {
 
+        }
     }
 
     handleSubmit(e) {
